@@ -3,4 +3,4 @@ requests
 bs4
 nltk
 google
-heapq
+priority
