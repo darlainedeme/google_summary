@@ -12,8 +12,7 @@ nltk.download('stopwords')
 
 # Set the query that you want to search for
 sentence = st.sidebar.text_input('Write your research query:', value='government policies energy 2022') 
-
-n = 2
+n = st.number_input("Define the extent of the research", min_value=1, max_value=None, value=2)
 
 i = 0
 for url in search(sentence, stop=n, lang="en"):
