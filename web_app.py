@@ -14,7 +14,7 @@ response = requests.get(f"https://www.google.com/search?q={sentence}")
 soup = BeautifulSoup(response.text, "html.parser")
 
 # Find the relevant results on the page
-results = soup.find_all("h3")
+results = soup.find_all("title")
 
 # Open each result in a new tab
 for result in results:
