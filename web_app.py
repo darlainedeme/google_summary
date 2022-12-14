@@ -8,6 +8,7 @@ import re
 
 # Set the query that you want to search for
 sentence = st.sidebar.text_input('Write your research query:', value='government policies energy 2022') 
+nltk.download('punkt')
 
 n = 2
 
