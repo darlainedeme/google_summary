@@ -4,6 +4,7 @@ import nltk
 import streamlit as st
 from googlesearch import search
 import heapq
+import re
 
 # Set the query that you want to search for
 sentence = st.sidebar.text_input('Write your research query:', value='government policies energy 2022') 
