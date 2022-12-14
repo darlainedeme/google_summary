@@ -69,4 +69,5 @@ for url in search(sentence, stop=n, lang="en"):
 
     # summary = nltk.summarize(text)
     st.write(i)
+    st.write("source [link]({0})".format(url))
     st.write(summary)
