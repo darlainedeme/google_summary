@@ -5,3 +5,4 @@ nltk
 google
 priority
 PyPDF2
+gensim
