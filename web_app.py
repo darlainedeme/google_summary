@@ -83,8 +83,11 @@ for url in search(sentence, stop=n, lang="en"):
 
     # summary = nltk.summarize(text)
     st.write(i)
-    for title in parsed_article.find_all('title'):
-        st.write(title.get_text())
+    try:
+        for title in parsed_article.find_all('title'):
+            st.write(title.get_text())
+    except:
+        st.write("Title not foud")
 
     if url.endswith('.pdf'):
         st.write('PDF document:')
