@@ -68,6 +68,7 @@ for url in search(sentence, stop=n, lang="en"):
 
     # summary = nltk.summarize(text)
     st.write(i)
-    st.write(url.results.title)
+    for title in parsed_article.find_all('title'):
+        st.write(title.get_text())
     st.write("source [link]({0})".format(url))
     st.write(summary)
