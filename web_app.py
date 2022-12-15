@@ -16,7 +16,11 @@ n = st.sidebar.number_input("Define the extent of the research", min_value=1, ma
 i = 0
 for url in search(sentence, stop=n, lang="en"):
     i += 1
-    if not url.endswith('.pdf'):
+    if url.endswith('.pdf'):
+        st.write(i)
+        st.write("source [link]({0})".format(url))
+    
+    else:
         reqs = requests.get(url)
         parsed_article = BeautifulSoup(reqs.text, 'html.parser')
         paragraphs = parsed_article.find_all('p')
