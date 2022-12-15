@@ -4,4 +4,4 @@ bs4
 nltk
 google
 priority
-pyPdf
+PyPDF2
