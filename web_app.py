@@ -11,7 +11,7 @@ nltk.download('stopwords')
 
 
 # Set the query that you want to search for
-sentence = st.sidebar.text_input('Write your research query:', value='government policies energy 2022') 
+sentence = st.sidebar.text_input('Write your research query:', value='australia energy inflation policy 2022') 
 n = st.sidebar.number_input("Define the extent of the research", min_value=1, max_value=None, value=2)
 
 i = 0
@@ -68,5 +68,6 @@ for url in search(sentence, stop=n, lang="en"):
 
     # summary = nltk.summarize(text)
     st.write(i)
+    st.write(url.results.title)
     st.write("source [link]({0})".format(url))
     st.write(summary)
