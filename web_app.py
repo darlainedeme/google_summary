@@ -6,7 +6,8 @@ from googlesearch import search
 import heapq
 import re
 import io
-from pyPdf import PdfFileReader
+import PyPDF2
+from gensim.summarization import summarize
 
 nltk.download('punkt')
 nltk.download('stopwords')
@@ -22,7 +23,7 @@ for url in search(sentence, stop=n, lang="en"):
         r = requests.get(url)
         f = io.BytesIO(r.content)
 
-        reader = PdfFileReader(f)
+        reader = PyPDF2.PdfFileReader(f)
         article_text = reader.getPage(0).extractText().split('\n')
     
     else:
