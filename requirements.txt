@@ -5,4 +5,4 @@ nltk
 google
 priority
 PyPDF2
-gensim
+gensim==3.8.3
