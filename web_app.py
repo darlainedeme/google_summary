@@ -12,6 +12,7 @@ from gensim.summarization import summarize
 nltk.download('punkt')
 nltk.download('stopwords')
 
+
 # Set the query that you want to search for
 sentence = st.sidebar.text_input('Write your research query:', value='australia energy inflation policy 2022') 
 n = st.sidebar.number_input("Define the extent of the research", min_value=1, max_value=10, value=3)
@@ -23,8 +24,12 @@ for url in search(sentence, stop=n, lang="en"):
         r = requests.get(url)
         f = io.BytesIO(r.content)
 
-        reader = PyPDF2.PdfFileReader(f)
-        article_text = reader.getPage(0).extractText().split('\n')
+        pdf_reader = PyPDF2.PdfFileReader(f)
+        # Read the PDF file
+        article_text = ""
+        for page in range(pdf_reader.numPages):
+            article_text += pdf_reader.getPage(page).extractText()
+            
     
     else:
         reqs = requests.get(url)
