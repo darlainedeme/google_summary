@@ -14,8 +14,8 @@ nltk.download('stopwords')
 
 
 # Set the query that you want to search for
-sentence = st.sidebar.text_input('Write your research query:', value='australia energy inflation policy 2022') 
-n = st.sidebar.number_input("Define the extent of the research", min_value=1, max_value=10, value=3)
+sentence = st.sidebar.text_input('Write your research query:', value='uk energy subsidies reform 2022') 
+n = st.sidebar.number_input("Define the extent of the research", min_value=1, max_value=10, value=2)
 
 i = 0
 for url in search(sentence, stop=n, lang="en"):
@@ -84,8 +84,7 @@ for url in search(sentence, stop=n, lang="en"):
     # summary = nltk.summarize(text)
     st.write(i)
     try:
-        for title in parsed_article.find_all('title'):
-            st.write(title.get_text())
+        st.write(parsed_article.find_all('title')[0].get_text())
     except:
         st.write("Title not foud")
 
